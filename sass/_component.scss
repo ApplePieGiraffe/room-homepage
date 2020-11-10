@@ -20,6 +20,7 @@
 .menu-btn--active {
     .menu-btn__bar--1 { 
         transform: translate(-3px, 8px) rotate(45deg); 
+        background-color: var(--color-dark-grey);
     }
 
     .menu-btn__bar--2 { 
@@ -27,6 +28,7 @@
     }
 
     .menu-btn__bar--3 { 
-        transform: translate(-3px, -8px) rotate(-45deg); 
+        transform: translate(-3px, -8px) rotate(-45deg);
+        background-color: var(--color-dark-grey);
     }
 }

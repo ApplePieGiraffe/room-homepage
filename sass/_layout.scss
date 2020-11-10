@@ -2,6 +2,20 @@ body {
     min-height: 100vh;
 }
 
+.filter {
+    display: none;
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    transition: all 1s;
+
+    &--active {
+        display: initial;
+    }
+}
+
 .header-hero-wrapper {
     display: flex;
     flex-direction: column;
@@ -21,17 +35,19 @@ body {
         align-items: center;
         justify-content: center;
         width: 100%;
-        padding: 8rem;
+        padding: 6rem;
 
         @media only screen and (min-width: 1000px) {
             justify-content: flex-start;
+            padding: 8rem;
         }
     }
 
     &__menu-btn {    
         position: absolute;
-        top: 6rem;
-        left: 6rem;
+        z-index: 5;
+        top: 5.75rem;
+        left: 4rem;
 
         @media only screen and (min-width: 1000px) {
             display: none;
@@ -39,15 +55,47 @@ body {
     }
 
     &__nav {
-        display: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        z-index: 4;
+        top: 0;
+        left: 0;
+        transform: translateY(-13.5rem);
+        width: 100%;
+        height: 13.5rem;
+        background-color: white;
+        opacity: 0;
+
+        &--active {
+            @media only screen and (max-width: 999px) {
+                transform: translate(0);
+                opacity: 1;
+                transition: all .5s;
+            }
+        }
 
         @media only screen and (min-width: 1000px) {
             display: initial;
+            position: initial;
+            transform: initial;
+            width: initial;
+            height: initial;
+            background-color: initial;
+            opacity: initial;
+            transition: all .5s;
         }
 
         &__list {
             display: flex;
+            margin-right: -6rem;
+            margin-bottom: -.5rem;
             list-style: none;
+
+            @media only screen and (min-width: 1000px) {
+                margin: 0;
+            }
 
             &__item {
                 position: relative;
@@ -66,7 +114,7 @@ body {
                 }
 
                 &:not(:last-child) {
-                    margin-right: 4rem;
+                    margin-right: 3rem;
                 }
 
                 &:hover {
@@ -78,6 +126,12 @@ body {
 
                 a {
                     text-decoration: none;
+                }
+
+                @media only screen and (min-width: 1000px) {
+                    &:not(:last-child) {
+                        margin-right: 4rem;
+                    }
                 }
             }
         }
@@ -93,8 +147,12 @@ body {
     &__img {
         display: block;
         width: 100%;
-        height: 66.75rem;
+        height: 45rem;
         object-fit: cover;
+
+        @media only screen and (min-width: 800px) {
+            height: 66.75rem;
+        }
     }
 
     &__btn-wrapper {
@@ -111,12 +169,27 @@ body {
 
 .slider-btn {
     display: block;
-    width: 10rem;
-    height: 10rem;
+    width: 7rem;
+    height: 7rem;
     border: none;
     background-color: var(--color-black);
     cursor: pointer;
     transition: all .5s;
+
+    img {
+        width: 1.25rem;
+        height: auto;
+    }
+
+    @media only screen and (min-width: 800px) {
+        width: 10rem;
+        height: 10rem;
+
+        img {
+            width: initial;
+            height: auto;
+        }
+    }
 
     &:hover {
         background-color: var(--color-very-dark-grey);
@@ -126,8 +199,12 @@ body {
 .hero {
     flex: 1 1 75rem;
     padding: 4rem;
-    padding-top: 15rem;
-    padding-left: 7rem;
+    padding-top: 9rem;
+
+    @media only screen and (min-width: 800px) {
+        padding-top: 15rem;
+        padding-left: 7rem;
+    }
 
     &__text-wrapper {
         max-width: 53rem;
@@ -138,11 +215,19 @@ body {
     }
 
     &__heading {
-        margin-bottom: 3.125rem;
+        margin-bottom: 2rem;
+
+        @media only screen and (min-width: 800px) {
+            margin-bottom: 3.125rem;
+        }
     }
 
     &__description {
-        margin-bottom: 4rem;
+        margin-bottom: 5rem;
+
+        @media only screen and (min-width: 800px) {
+            margin-bottom: 4rem;
+        }
     }
 
     &__link {
