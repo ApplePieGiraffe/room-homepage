@@ -1,0 +1,19 @@
+:root {
+    --color-white: hsl(0, 0%, 100%);
+    --color-dark-grey: hsl(0, 0%, 63%);
+    --color-very-dark-grey: hsl(0, 0%, 27%);
+    --color-black: hsl(0, 0%, 0%);
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 50%;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}

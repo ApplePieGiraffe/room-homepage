@@ -1,0 +1,32 @@
+.menu-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 2.25rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+
+    &__bar {
+        display: inline-block;
+        width: 3rem;
+        height: 2px;
+        background-color: white;
+        transition: all .5s;
+    }
+}
+
+.menu-btn--active {
+    .menu-btn__bar--1 { 
+        transform: translate(-3px, 8px) rotate(45deg); 
+    }
+
+    .menu-btn__bar--2 { 
+        opacity: 0;
+    }
+
+    .menu-btn__bar--3 { 
+        transform: translate(-3px, -8px) rotate(-45deg); 
+    }
+}

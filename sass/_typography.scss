@@ -1,0 +1,47 @@
+body {
+    font-family: 'Spartan', sans-serif;
+    font-size: 1.5rem;
+}
+
+.header {
+    &__nav {
+        &__list {
+            &__item {
+                a {
+                    color: white;
+                    text-transform: lowercase;
+                }
+            }
+        }
+    }
+}
+
+.hero {
+    &__heading {        
+        @media only screen and (min-width: 800px) {
+            font-size: 4.5rem;
+            letter-spacing: -2px;
+            line-height: 5.5rem;
+        }
+
+        @media only screen and (min-width: 1000px) {
+            font-size: 5rem;
+        }
+    }
+
+    &__description {
+        color: var(--color-dark-grey);
+        line-height: 2.5rem;
+    }
+
+    &__link {
+        font-weight: 700;
+        letter-spacing: 1.25rem;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &:hover {
+            color: var(--color-dark-grey);
+        }
+    }
+}
