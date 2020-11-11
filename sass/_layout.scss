@@ -276,6 +276,12 @@ body {
         display: flex;
         flex-direction: column;
         align-items: start;
+        transition: opacity .6s;
+        opacity: 1;
+
+        &--hidden {
+            opacity: 0;
+        }
     }
 
     &__heading {

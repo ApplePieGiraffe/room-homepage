@@ -417,6 +417,13 @@ body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: start;
+  -webkit-transition: opacity .8s;
+  transition: opacity .8s;
+  opacity: 1;
+}
+
+.hero__text-wrapper--hidden {
+  opacity: 0;
 }
 
 .hero__heading {
