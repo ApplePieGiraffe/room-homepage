@@ -31,11 +31,27 @@
 
                 <a class="header__logo" href="#"><img src="./img/logo.svg" alt="logo"></a>
             </div>
-            <picture>
-                <source media="(max-width: 599px)" srcset="./img/mobile-image-hero-1.jpg">
-                <source media="(min-width: 600px)" srcset="./img/desktop-image-hero-1.jpg">
-                <img src="./img/desktop-image-hero-1.jpg" alt="furniture" class="header__img">
-            </picture>
+
+            <div class="carousel header__img-wrapper">
+                <picture>
+                    <source media="(max-width: 599px)" srcset="./img/mobile-image-hero-1.jpg">
+                    <source media="(min-width: 600px)" srcset="./img/desktop-image-hero-1.jpg">
+                    <img src="./img/desktop-image-hero-1.jpg" alt="furniture" class="carousel-img header__img header__img--active">
+                </picture>
+
+                <picture>
+                    <source media="(max-width: 599px)" srcset="./img/mobile-image-hero-2.jpg">
+                    <source media="(min-width: 600px)" srcset="./img/desktop-image-hero-2.jpg">
+                    <img src="./img/desktop-image-hero-2.jpg" alt="furniture" class="carousel-img header__img header__img--inactive">
+                </picture>
+
+                <picture>
+                    <source media="(max-width: 599px)" srcset="./img/mobile-image-hero-3.jpg">
+                    <source media="(min-width: 600px)" srcset="./img/desktop-image-hero-3.jpg">
+                    <img src="./img/desktop-image-hero-3.jpg" alt="furniture" class="carousel-img header__img header__img--inactive">
+                </picture>
+            </div>
+
             <div class="header__btn-wrapper">
                 <button class="slider-btn slider-btn--prev"><img src="./img/icon-angle-left.svg" alt="previous slide button"></button>
                 <button class="slider-btn slider-btn--next"><img src="./img/icon-angle-right.svg" alt="next slide button"></button>

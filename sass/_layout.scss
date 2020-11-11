@@ -38,10 +38,6 @@ body {
     position: relative;
     flex: 1 2 auto;
 
-    &:hover .header__img {
-            opacity: .9;
-    }
-
     &__nav-wrapper {
         position: absolute;
         display: flex;
@@ -170,12 +166,42 @@ body {
         }
     }
 
+    &__img-wrapper {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 66.75rem;
+        width: auto;
+        height: 45rem;
+        overflow: hidden;
+
+        @media only screen and (min-width: 800px) {
+            height: 66.75vh;
+            min-height: 66.75rem;
+        }
+    }
+
+    picture {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
     &__img {
         display: block;
         width: 100%;
         height: 45rem;
         object-fit: cover;
-        transition: opacity .5s;
+        transition: all 1s;
+
+        &--active {
+            display: initial;
+            opacity: 1;
+        }
+
+        &--inactive {
+            display: hidden;
+            transform: scale(1.5);
+            opacity: 0;
+        }
 
         @media only screen and (min-width: 800px) {
             height: 66.75vh;
@@ -289,7 +315,6 @@ body {
     }
 }
 
-
 // ====================
 // |      ABOUT       |
 // ====================
@@ -315,10 +340,6 @@ body {
             flex: 1 3 auto;
             min-width: 0;
             object-fit: cover;
-        }
-
-        &:hover {
-            opacity: .9;
         }
     }
 
