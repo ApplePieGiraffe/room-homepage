@@ -3,6 +3,8 @@ body {
     font-size: 1.5rem;
 }
 
+// HEADER
+
 .header {
     &__nav {
         &__list {
@@ -11,17 +13,20 @@ body {
                     font-size: 1.75rem;
                     font-weight: 700;
                     text-transform: lowercase;
+                    color: black;
 
                     @media only screen and (min-width: 1000px) {
                         color: white;
                         font-size: 1.5rem;
-                        font-weight: 500;
+                        font-weight: 600;
                     }
                 }
             }
         }
     }
 }
+
+// HERO
 
 .hero {
     &__heading {     
@@ -35,6 +40,10 @@ body {
         }
 
         @media only screen and (min-width: 1000px) {
+            font-size: 4.75rem;
+        }
+
+        @media only screen and (min-width: 1200px) {
             font-size: 5rem;
         }
     }
@@ -53,5 +62,21 @@ body {
         &:hover {
             color: var(--color-dark-grey);
         }
+    }
+}
+
+// ABOUT
+
+.about {
+    &__heading {
+        font-size: 1.5rem;
+        letter-spacing: 4px;
+        word-spacing: 6px;
+        text-transform: uppercase;
+    }
+
+    &__description {
+        color: var(--color-dark-grey);
+        line-height: 2.5rem;
     }
 }

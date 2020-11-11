@@ -1,18 +1,23 @@
 body {
-    min-height: 100vh;
+    overflow-x: hidden;
 }
 
-.filter {
-    display: none;
+.bg-filter {
+    display: hidden;
     position: absolute;
     z-index: 3;
-    width: 100%;
-    height: 100%;
+    width: 0;
+    height: 0;
     background-color: rgba(0, 0, 0, .5);
-    transition: all 1s;
+    opacity: 0;
+    backdrop-filter: blur(2px);
+    transition: opacity .5s, backdrop-filter .5s;
 
     &--active {
         display: initial;
+        width: 100%;
+        height: 100%;
+        opacity: 1;
     }
 }
 
@@ -25,9 +30,17 @@ body {
     }
 }
 
+// ====================
+// |     HEADER       |
+// ====================
+
 .header {
     position: relative;
     flex: 1 2 auto;
+
+    &:hover .header__img {
+            opacity: .9;
+    }
 
     &__nav-wrapper {
         position: absolute;
@@ -61,12 +74,18 @@ body {
         position: absolute;
         z-index: 4;
         top: 0;
-        left: 0;
-        transform: translateY(-13.5rem);
-        width: 100%;
+        left: 0; 
+        width: 100vw;
         height: 13.5rem;
         background-color: white;
-        opacity: 0;
+
+        &--inactive {
+            @media only screen and (max-width: 999px) {
+                transform: translateY(-13.5rem);
+                opacity: 0;
+                transition: all .5s;
+            }
+        }
 
         &--active {
             @media only screen and (max-width: 999px) {
@@ -108,9 +127,13 @@ body {
                     transform: translate(-50%);
                     width: 0;
                     height: 2px;
-                    background-color: white;
+                    background-color: black;
                     opacity: 0;
                     transition: all .5s;
+
+                    @media only screen and (min-width: 1000px) {
+                        background-color: white;
+                    }
                 }
 
                 &:not(:last-child) {
@@ -138,6 +161,9 @@ body {
     }
 
     &__logo {
+        position: relative;
+        z-index: 2;
+
         @media only screen and (min-width: 1000px) {
             order: -1;
             margin-right: 7rem;
@@ -149,9 +175,11 @@ body {
         width: 100%;
         height: 45rem;
         object-fit: cover;
+        transition: opacity .5s;
 
         @media only screen and (min-width: 800px) {
-            height: 66.75rem;
+            height: 66.75vh;
+            min-height: 66.75rem;
         }
     }
 
@@ -166,6 +194,10 @@ body {
         }
     }
 }
+
+// ====================
+// |  SLIDER BUTTONS  |
+// ====================
 
 .slider-btn {
     display: block;
@@ -196,19 +228,25 @@ body {
     }
 }
 
+// ====================
+// |       HERO       |
+// ====================
+
 .hero {
-    flex: 1 1 75rem;
     padding: 4rem;
     padding-top: 9rem;
 
     @media only screen and (min-width: 800px) {
-        padding-top: 15rem;
-        padding-left: 7rem;
+        flex: 1 1 75rem;
+        display: flex;
+        align-items: center;
+        padding: 4rem;
+        padding-top: 0rem;
+        padding-left: 7vw;
+        padding-right: 5.25vw;
     }
 
     &__text-wrapper {
-        max-width: 53rem;
-        margin: 0 auto;
         display: flex;
         flex-direction: column;
         align-items: start;
@@ -218,6 +256,7 @@ body {
         margin-bottom: 2rem;
 
         @media only screen and (min-width: 800px) {
+            max-width: 52.5rem;
             margin-bottom: 3.125rem;
         }
     }
@@ -226,12 +265,18 @@ body {
         margin-bottom: 5rem;
 
         @media only screen and (min-width: 800px) {
+            max-width: 58.25rem;
             margin-bottom: 4rem;
         }
     }
 
     &__link {
+        margin-bottom: 4rem;
         transition: all .5s;
+
+        @media only screen and (min-width: 800px) {
+            margin-bottom: 0;
+        }
 
         &:hover svg * {
             transition: all .5s;
@@ -241,5 +286,53 @@ body {
         svg {
             margin-left: 3rem;
         }
+    }
+}
+
+
+// ====================
+// |      ABOUT       |
+// ====================
+
+.about {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @media only screen and (min-width: 800px) {
+        flex-direction: row;
+        height: 33.25vh;
+        min-height: 33.25rem;
+    }
+
+    &__img {
+        flex: 1 3 auto;
+        min-width: 0;
+        object-fit: cover;
+        transition: opacity .5s;
+
+        @media only screen and (min-width: 800px) {
+            flex: 1 3 auto;
+            min-width: 0;
+            object-fit: cover;
+        }
+
+        &:hover {
+            opacity: .9;
+        }
+    }
+
+    &__text-wrapper {
+        padding: 8rem 4rem;
+
+        @media only screen and (min-width: 800px) {
+            flex: 1 1 580px;
+            margin: auto 0;
+            padding: 6rem;
+        }
+    }
+
+    &__heading {
+        margin-bottom: 2rem;
     }
 }
