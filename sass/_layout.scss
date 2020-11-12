@@ -7,6 +7,73 @@ body {
     overflow-y: hidden;
 }
 
+// =====================
+// |  INTRO AND STUFF  |
+// =====================
+
+.intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+
+    &__heading {
+        overflow: hidden;
+        background-color: black;
+    }
+
+    &__text {
+        display: inline-block;
+        transform: translateY(100%);
+        color: hsl(0, 0%, 100%);
+        font-family: 'Heebo', sans-serif;
+        font-size: 2.5rem;
+
+        @media only screen and (min-width: 800px) {
+            font-size: 3.5rem;
+        }
+
+        &--1 { 
+            color: rgb(68, 68, 68);
+        }
+
+        &--2 { 
+            font-size: 4.5rem;
+
+            @media only screen and (min-width: 400px) {
+                font-size: 5.5rem;
+            }
+
+            @media only screen and (min-width: 800px) {
+                font-size: 6.5rem;
+            }
+        }
+
+        &--3 { 
+            color: rgb(201, 201, 201);
+            font-weight: 400;
+        }
+    }
+}
+
+.slider {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    transform: translateY(100%);
+    width: 100%;
+    height: 100%;
+    background-color: hsl(0, 0%, 95%);
+}
+
 .bg-filter {
     display: hidden;
     position: fixed;
@@ -266,7 +333,7 @@ body {
 // ====================
 
 .hero {
-    min-height: 54.25rem;
+    // min-height: 54.25rem;
     padding: 4rem;
     padding-top: 9rem;
 
@@ -368,6 +435,6 @@ body {
     }
 
     &__heading {
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
     }
 }
