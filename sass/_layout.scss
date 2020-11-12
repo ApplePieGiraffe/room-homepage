@@ -207,7 +207,7 @@ body {
                 }
 
                 &:not(:last-child) {
-                    margin-right: 3rem;
+                    margin-right: 2.5rem;
                 }
 
                 &:hover {
@@ -223,7 +223,7 @@ body {
 
                 @media only screen and (min-width: 1000px) {
                     &:not(:last-child) {
-                        margin-right: 4rem;
+                        margin-right: 3.75rem;
                     }
                 }
             }

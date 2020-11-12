@@ -335,7 +335,7 @@ body {
 }
 
 .header__nav__list__item:not(:last-child) {
-  margin-right: 3rem;
+  margin-right: 2.5rem;
 }
 
 .header__nav__list__item:hover::after {
@@ -349,7 +349,7 @@ body {
 
 @media only screen and (min-width: 1000px) {
   .header__nav__list__item:not(:last-child) {
-    margin-right: 4rem;
+    margin-right: 3.75rem;
   }
 }
 
