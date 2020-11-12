@@ -1,5 +1,6 @@
 // MOBILE NAVIGATION
 
+const body = document.querySelector('body');
 const menuBtn = document.querySelector('.menu-btn');
 const headerNav = document.querySelector('.header__nav');
 const filter = document.querySelector('.bg-filter');
@@ -20,10 +21,15 @@ function toggleFilter() {
     filter.classList.toggle('bg-filter--active');
 }
 
+function disableScroll() {
+    body.classList.toggle('disable-scroll');
+}
+
 function toggleNav() {
     toggleMenuBtn();
     displayNav();
     toggleFilter();
+    disableScroll()
 }
 
 menuBtn.addEventListener('click', toggleNav);
@@ -50,17 +56,6 @@ function nextImg() {
     images[(index + 1) % images.length].classList.replace('header__img--inactive', 'header__img--active');
     index++;
 }
-
-// prevBtn.addEventListener('click', prevImg);
-// nextBtn.addEventListener('click', nextImg);
-
-// document.addEventListener('keydown', (event) => {
-//     if (event.which === 37) {
-//         prevImg();
-//     } else if (event.which === 39) {
-//         nextImg();
-//     }
-// });
 
 // CAROUSEL TEXT
 
@@ -92,7 +87,7 @@ function changeText() {
     }, 600);
 }
 
-// CHANGE IMAGES AND TEXT
+// CHANGE CONTENT (IMAGES + TEXT)
 
 function prevContent() {
     prevImg();
